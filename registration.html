@@ -8,13 +8,13 @@
       margin: 0;
       font-family: Arial, sans-serif;
       display: flex;
-      background: #f5f5dc; /* بيج */
-      color: #5c4033;      /* بني */
+      background-color: #f5f5dc; /* بيج */
+      color: #5c4033;           /* بني */
     }
     /* Sidebar */
     .sidebar {
       width: 220px;
-      background: #deb887; /* بني فاتح (BurlyWood) */
+      background-color: #deb887; /* بني فاتح */
       color: #5c4033;
       height: 100vh;
       padding-top: 20px;
@@ -31,7 +31,7 @@
       font-weight: bold;
     }
     .sidebar button:hover {
-      background: #f5deb3; /* بيج أفتح عند المرور */
+      background-color: #f5deb3; /* بيج أفتح عند المرور */
     }
     /* Main Content */
     .main {
@@ -40,7 +40,7 @@
     }
     .form-section {
       margin-bottom: 20px;
-      background: #fff8dc; /* Cornsilk */
+      background-color: #fff8dc; /* Cornsilk */
       padding: 15px;
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(92,64,51,0.2);
@@ -62,7 +62,7 @@
       border: 1px solid #a0522d;
       border-radius: 6px;
       font-size: 14px;
-      background: #fffaf0;
+      background-color: #fffaf0;
       color: #5c4033;
     }
     .buttons {
@@ -78,18 +78,18 @@
       font-weight: bold;
     }
     .register {
-      background: #8b4513; /* بني غامق */
+      background-color: #8b4513; /* بني غامق */
       color: #fff;
     }
     .register:hover {
-      background: #5c4033;
+      background-color: #5c4033;
     }
     .cancel {
-      background: #a0522d; /* بني محمر */
+      background-color: #a0522d; /* بني محمر */
       color: #fff;
     }
     .cancel:hover {
-      background: #5c4033;
+      background-color: #5c4033;
     }
   </style>
 </head>
@@ -151,48 +151,6 @@
   </div>
 
   <script>
-    function changeLanguage(lang) {
-      if (lang === 'ar') {
-        document.querySelectorAll('h3')[0].textContent = "المعلومات الشخصية";
-        document.querySelectorAll('label')[0].textContent = "الاسم الكامل";
-        document.querySelectorAll('label')[1].textContent = "الرقم الجامعي";
-        document.querySelectorAll('label')[2].textContent = "البريد الإلكتروني";
-        document.querySelectorAll('label')[3].textContent = "الهاتف";
-        document.querySelectorAll('h3')[1].textContent = "المعلومات الأكاديمية";
-        document.querySelectorAll('label')[4].textContent = "البرنامج";
-        document.querySelectorAll('label')[5].textContent = "المستوى";
-        document.querySelector('.register').textContent = "تسجيل";
-        document.querySelector('.cancel').textContent = "إلغاء";
-
-        // Sidebar بالعربية
-        document.getElementById('dashboard').textContent = "لوحة التحكم";
-        document.getElementById('students').textContent = "الطلاب";
-        document.getElementById('courses').textContent = "المقررات";
-        document.getElementById('reports').textContent = "التقارير";
-        document.getElementById('settings').textContent = "الإعدادات";
-        document.getElementById('logout').textContent = "تسجيل الخروج";
-      } else {
-        document.querySelectorAll('h3')[0].textContent = "Personal Information";
-        document.querySelectorAll('label')[0].textContent = "Full Name";
-        document.querySelectorAll('label')[1].textContent = "Student ID";
-        document.querySelectorAll('label')[2].textContent = "Email";
-        document.querySelectorAll('label')[3].textContent = "Phone";
-        document.querySelectorAll('h3')[1].textContent = "Academic Information";
-        document.querySelectorAll('label')[4].textContent = "Program";
-        document.querySelectorAll('label')[5].textContent = "Level";
-        document.querySelector('.register').textContent = "Register";
-        document.querySelector('.cancel').textContent = "Cancel";
-
-        // Sidebar بالإنجليزية
-        document.getElementById('dashboard').textContent = "Dashboard";
-        document.getElementById('students').textContent = "Students";
-        document.getElementById('courses').textContent = "Courses";
-        document.getElementById('reports').textContent = "Reports";
-        document.getElementById('settings').textContent = "Settings";
-        document.getElementById('logout').textContent = "Logout";
-      }
-    }
-
     function registerStudent() {
       const fullname = document.getElementById('fullname').value;
       const studentid = document.getElementById('studentid').value;
