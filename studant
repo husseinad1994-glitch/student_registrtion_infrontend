@@ -2,10 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Home</title>
+  <title>My Open Tabs</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      margin: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #4f46e5;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      max-width: 600px;
+      margin: 20px auto;
+    }
+    li {
+      background: #fff;
+      margin-bottom: 10px;
+      padding: 12px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+    a {
+      color: #4f46e5;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .active {
+      border-left: 5px solid #4f46e5;
+      padding-left: 8px;
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome to Student Registration System</h1>
-  <p>This is the home page.</p>
+
+  <h1>My Open Tabs</h1>
+  <ul>
+    <li class="active"><a href="https://github.com/MuhammedZakria/StudentRegistrationFrondend">MuhammedZakria/StudentRegistrationFrondend</a> (Active)</li>
+    <li><a href="https://learn.neelain.edu.sd">Home | E-Learning Platform</a></li>
+    <li><a href="https://www.bing.com/search">GitHub - Search</a></li>
+    <li><a href="file://C:/Users/Rcs/Downloads/Create%20Account%20%20(2).html">Create Account (local file)</a></li>
+    <li><a href="file://C:/Users/Rcs/Downloads/home%20(12).html">home (12).html</a></li>
+    <li><a href="file://C:/Users/Rcs/Downloads/-%20Forgot%20Password%20(1).html">Forgot Password</a></li>
+  </ul>
+
 </body>
 </html>
