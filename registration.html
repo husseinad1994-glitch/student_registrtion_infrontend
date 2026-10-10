@@ -1,47 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- أزرار تغيير اللغة داخل الـ sidebar -->
-<div class="sidebar">
-  <button onclick="changeLanguage('ar')">العربية</button>
-  <button onclick="changeLanguage('en')">English</button>
-  <button>Dashboard</button>
-  <button>Students</button>
-  <button>Courses</button>
-  <button>Reports</button>
-  <button>Settings</button>
-  <button>Logout</button>
-</div>
-
-<script>
-  function changeLanguage(lang) {
-    if (lang === 'ar') {
-      document.querySelectorAll('h3')[0].textContent = "المعلومات الشخصية";
-      document.querySelectorAll('label')[0].textContent = "الاسم الكامل";
-      document.querySelectorAll('label')[1].textContent = "الرقم الجامعي";
-      document.querySelectorAll('label')[2].textContent = "البريد الإلكتروني";
-      document.querySelectorAll('label')[3].textContent = "الهاتف";
-      document.querySelectorAll('h3')[1].textContent = "المعلومات الأكاديمية";
-      document.querySelectorAll('label')[4].textContent = "البرنامج";
-      document.querySelectorAll('label')[5].textContent = "المستوى";
-      document.querySelector('.register').textContent = "تسجيل";
-      document.querySelector('.cancel').textContent = "إلغاء";
-    } else {
-      document.querySelectorAll('h3')[0].textContent = "Personal Information";
-      document.querySelectorAll('label')[0].textContent = "Full Name";
-      document.querySelectorAll('label')[1].textContent = "Student ID";
-      document.querySelectorAll('label')[2].textContent = "Email";
-      document.querySelectorAll('label')[3].textContent = "Phone";
-      document.querySelectorAll('h3')[1].textContent = "Academic Information";
-      document.querySelectorAll('label')[4].textContent = "Program";
-      document.querySelectorAll('label')[5].textContent = "Level";
-      document.querySelector('.register').textContent = "Register";
-      document.querySelector('.cancel').textContent = "Cancel";
-    }
-  }
-</script>
-
   <meta charset="UTF-8">
+  <title>Student Registration</title>
   <style>
     body {
       margin: 0;
@@ -50,16 +11,16 @@
     }
     /* Sidebar */
     .sidebar {
-      width: 220px;          /* بدون مسافة */
+      width: 220px;
       background: #2c3e50;
       color: #fff;
-      height: 100vh;         /* بدون مسافة */
-      padding-top: 20px;     /* بدون مسافة */
+      height: 100vh;
+      padding-top: 20px;
     }
     .sidebar button {
       display: block;
-      width: 100%;           /* بدون مسافة */
-      padding: 12px;         /* بدون مسافة */
+      width: 100%;
+      padding: 12px;
       border: none;
       background: none;
       color: #fff;
@@ -72,38 +33,34 @@
     /* Main Content */
     .main {
       flex: 1;
-      padding: 20px;         /* بدون مسافة */
-    }
-    h2 {
-      margin-bottom: 20px;   /* بدون مسافة */
-      color: #2c3e50;
+      padding: 20px;
     }
     .form-section {
-      margin-bottom: 20px;   /* بدون مسافة */
+      margin-bottom: 20px;
     }
     .form-section h3 {
-      margin-bottom: 10px;   /* بدون مسافة */
+      margin-bottom: 10px;
       color: #34495e;
     }
     label {
       display: block;
-      margin: 8px 0 4px;     /* بدون مسافة */
+      margin: 8px 0 4px;
     }
     input, select {
-      width: 100%;           /* بدون مسافة */
-      padding: 8px;          /* بدون مسافة */
-      margin-bottom: 12px;   /* بدون مسافة */
-      border: 1px solid #ccc;/* بدون مسافة */
-      border-radius: 4px;    /* بدون مسافة */
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
     }
     .buttons {
-      margin-top: 20px;      /* بدون مسافة */
+      margin-top: 20px;
     }
     .buttons button {
-      padding: 10px 20px;    /* بدون مسافة */
-      margin-right: 10px;    /* بدون مسافة */
+      padding: 10px 20px;
+      margin-right: 10px;
       border: none;
-      border-radius: 4px;    /* بدون مسافة */
+      border-radius: 4px;
       cursor: pointer;
     }
     .register {
@@ -119,12 +76,14 @@
 <body>
   <!-- Sidebar -->
   <div class="sidebar">
-    <button>Dashboard</button>
-    <button>Students</button>
-    <button>Courses</button>
-    <button>Reports</button>
-    <button>Settings</button>
-    <button>Logout</button>
+    <button onclick="changeLanguage('ar')">العربية</button>
+    <button onclick="changeLanguage('en')">English</button>
+    <button id="dashboard">Dashboard</button>
+    <button id="students">Students</button>
+    <button id="courses">Courses</button>
+    <button id="reports">Reports</button>
+    <button id="settings">Settings</button>
+    <button id="logout">Logout</button>
   </div>
 
   <!-- Main Content -->
@@ -172,6 +131,48 @@
   </div>
 
   <script>
+    function changeLanguage(lang) {
+      if (lang === 'ar') {
+        document.querySelectorAll('h3')[0].textContent = "المعلومات الشخصية";
+        document.querySelectorAll('label')[0].textContent = "الاسم الكامل";
+        document.querySelectorAll('label')[1].textContent = "الرقم الجامعي";
+        document.querySelectorAll('label')[2].textContent = "البريد الإلكتروني";
+        document.querySelectorAll('label')[3].textContent = "الهاتف";
+        document.querySelectorAll('h3')[1].textContent = "المعلومات الأكاديمية";
+        document.querySelectorAll('label')[4].textContent = "البرنامج";
+        document.querySelectorAll('label')[5].textContent = "المستوى";
+        document.querySelector('.register').textContent = "تسجيل";
+        document.querySelector('.cancel').textContent = "إلغاء";
+
+        // Sidebar بالعربية
+        document.getElementById('dashboard').textContent = "لوحة التحكم";
+        document.getElementById('students').textContent = "الطلاب";
+        document.getElementById('courses').textContent = "المقررات";
+        document.getElementById('reports').textContent = "التقارير";
+        document.getElementById('settings').textContent = "الإعدادات";
+        document.getElementById('logout').textContent = "تسجيل الخروج";
+      } else {
+        document.querySelectorAll('h3')[0].textContent = "Personal Information";
+        document.querySelectorAll('label')[0].textContent = "Full Name";
+        document.querySelectorAll('label')[1].textContent = "Student ID";
+        document.querySelectorAll('label')[2].textContent = "Email";
+        document.querySelectorAll('label')[3].textContent = "Phone";
+        document.querySelectorAll('h3')[1].textContent = "Academic Information";
+        document.querySelectorAll('label')[4].textContent = "Program";
+        document.querySelectorAll('label')[5].textContent = "Level";
+        document.querySelector('.register').textContent = "Register";
+        document.querySelector('.cancel').textContent = "Cancel";
+
+        // Sidebar بالإنجليزية
+        document.getElementById('dashboard').textContent = "Dashboard";
+        document.getElementById('students').textContent = "Students";
+        document.getElementById('courses').textContent = "Courses";
+        document.getElementById('reports').textContent = "Reports";
+        document.getElementById('settings').textContent = "Settings";
+        document.getElementById('logout').textContent = "Logout";
+      }
+    }
+
     function registerStudent() {
       const fullname = document.getElementById('fullname').value;
       const studentid = document.getElementById('studentid').value;
@@ -199,3 +200,4 @@
     }
   </script>
 </body>
+</html>
