@@ -1,4 +1,79 @@
 <!DOCTYPE html>
+<!-- أزرار اللغة في الـ sidebar -->
+<div class="sidebar">
+  <button onclick="changeLanguage('en')">English</button>
+  <button onclick="changeLanguage('ar')">العربية</button>
+  <button id="dashboard">Dashboard</button>
+  <button id="students">Students</button>
+  <button id="courses">Courses</button>
+  <button id="reports">Reports</button>
+  <button id="settings">Settings</button>
+  <button id="logout">Logout</button>
+</div>
+
+<!-- مثال على العناوين واللابلز -->
+<h3 id="personalTitle">Personal Information</h3>
+<label id="lblFullname">Full Name</label>
+<label id="lblStudentid">Student ID</label>
+<label id="lblEmail">Email</label>
+<label id="lblPhone">Phone</label>
+
+<h3 id="academicTitle">Academic Information</h3>
+<label id="lblProgram">Program</label>
+<label id="lblLevel">Level</label>
+
+<button id="btnRegister" class="register">Register</button>
+<button id="btnCancel" class="cancel">Cancel</button>
+
+<script>
+  let currentLang = 'en';
+
+  function changeLanguage(lang) {
+    currentLang = lang;
+    if (lang === 'ar') {
+      document.getElementById("dashboard").textContent = "لوحة التحكم";
+      document.getElementById("students").textContent = "الطلاب";
+      document.getElementById("courses").textContent = "المقررات";
+      document.getElementById("reports").textContent = "التقارير";
+      document.getElementById("settings").textContent = "الإعدادات";
+      document.getElementById("logout").textContent = "تسجيل الخروج";
+
+      document.getElementById("personalTitle").textContent = "المعلومات الشخصية";
+      document.getElementById("lblFullname").textContent = "الاسم الكامل";
+      document.getElementById("lblStudentid").textContent = "الرقم الجامعي";
+      document.getElementById("lblEmail").textContent = "البريد الإلكتروني";
+      document.getElementById("lblPhone").textContent = "الهاتف";
+
+      document.getElementById("academicTitle").textContent = "المعلومات الأكاديمية";
+      document.getElementById("lblProgram").textContent = "البرنامج";
+      document.getElementById("lblLevel").textContent = "المستوى";
+
+      document.getElementById("btnRegister").textContent = "تسجيل";
+      document.getElementById("btnCancel").textContent = "إلغاء";
+    } else {
+      document.getElementById("dashboard").textContent = "Dashboard";
+      document.getElementById("students").textContent = "Students";
+      document.getElementById("courses").textContent = "Courses";
+      document.getElementById("reports").textContent = "Reports";
+      document.getElementById("settings").textContent = "Settings";
+      document.getElementById("logout").textContent = "Logout";
+
+      document.getElementById("personalTitle").textContent = "Personal Information";
+      document.getElementById("lblFullname").textContent = "Full Name";
+      document.getElementById("lblStudentid").textContent = "Student ID";
+      document.getElementById("lblEmail").textContent = "Email";
+      document.getElementById("lblPhone").textContent = "Phone";
+
+      document.getElementById("academicTitle").textContent = "Academic Information";
+      document.getElementById("lblProgram").textContent = "Program";
+      document.getElementById("lblLevel").textContent = "Level";
+
+      document.getElementById("btnRegister").textContent = "Register";
+      document.getElementById("btnCancel").textContent = "Cancel";
+    }
+  }
+</script>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
