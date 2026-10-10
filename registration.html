@@ -1,6 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- أزرار تغيير اللغة داخل الـ sidebar -->
+<div class="sidebar">
+  <button onclick="changeLanguage('ar')">العربية</button>
+  <button onclick="changeLanguage('en')">English</button>
+  <button>Dashboard</button>
+  <button>Students</button>
+  <button>Courses</button>
+  <button>Reports</button>
+  <button>Settings</button>
+  <button>Logout</button>
+</div>
+
+<script>
+  function changeLanguage(lang) {
+    if (lang === 'ar') {
+      document.querySelectorAll('h3')[0].textContent = "المعلومات الشخصية";
+      document.querySelectorAll('label')[0].textContent = "الاسم الكامل";
+      document.querySelectorAll('label')[1].textContent = "الرقم الجامعي";
+      document.querySelectorAll('label')[2].textContent = "البريد الإلكتروني";
+      document.querySelectorAll('label')[3].textContent = "الهاتف";
+      document.querySelectorAll('h3')[1].textContent = "المعلومات الأكاديمية";
+      document.querySelectorAll('label')[4].textContent = "البرنامج";
+      document.querySelectorAll('label')[5].textContent = "المستوى";
+      document.querySelector('.register').textContent = "تسجيل";
+      document.querySelector('.cancel').textContent = "إلغاء";
+    } else {
+      document.querySelectorAll('h3')[0].textContent = "Personal Information";
+      document.querySelectorAll('label')[0].textContent = "Full Name";
+      document.querySelectorAll('label')[1].textContent = "Student ID";
+      document.querySelectorAll('label')[2].textContent = "Email";
+      document.querySelectorAll('label')[3].textContent = "Phone";
+      document.querySelectorAll('h3')[1].textContent = "Academic Information";
+      document.querySelectorAll('label')[4].textContent = "Program";
+      document.querySelectorAll('label')[5].textContent = "Level";
+      document.querySelector('.register').textContent = "Register";
+      document.querySelector('.cancel').textContent = "Cancel";
+    }
+  }
+</script>
+
   <meta charset="UTF-8">
   <style>
     body {
