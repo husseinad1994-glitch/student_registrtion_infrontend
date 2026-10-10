@@ -10,13 +10,13 @@
       font-family: Arial, sans-serif;
       display: flex;
       min-height: 100vh;
-      background-color: #f0f4f8; /* خلفية فاتحة */
-      color: #2c3e50;           /* كتابة داكنة */
+      background-color: #f0f4f8;
+      color: #2c3e50;
     }
     /* Sidebar */
     .sidebar {
       width: 220px;
-      background-color: #34495e; /* أزرق غامق */
+      background-color: #34495e;
       color: #fff;
       height: 100vh;
       padding-top: 20px;
@@ -36,7 +36,7 @@
       font-weight: bold;
     }
     .sidebar button:hover {
-      background-color: #1abc9c; /* أخضر فاتح عند المرور */
+      background-color: #1abc9c;
     }
     /* Main Content */
     .main {
@@ -98,7 +98,6 @@
       background-color: #c0392b;
     }
 
-    /* Responsive Design */
     @media (max-width: 768px) {
       body {
         flex-direction: column;
@@ -117,36 +116,38 @@
 <body>
   <!-- Sidebar -->
   <div class="sidebar">
-    <button>Dashboard</button>
-    <button>Students</button>
-    <button>Courses</button>
-    <button>Reports</button>
-    <button>Settings</button>
-    <button>Logout</button>
+    <button onclick="changeLanguage('en')">English</button>
+    <button onclick="changeLanguage('ar')">العربية</button>
+    <button id="dashboard">Dashboard</button>
+    <button id="students">Students</button>
+    <button id="courses">Courses</button>
+    <button id="reports">Reports</button>
+    <button id="settings">Settings</button>
+    <button id="logout">Logout</button>
   </div>
 
   <!-- Main Content -->
   <div class="main">
     <!-- Personal Information -->
     <div class="form-section">
-      <h3>Personal Information</h3>
-      <label for="fullname">Full Name</label>
+      <h3 id="personalTitle">Personal Information</h3>
+      <label for="fullname" id="lblFullname">Full Name</label>
       <input type="text" id="fullname" placeholder="Enter full name">
 
-      <label for="studentid">Student ID</label>
+      <label for="studentid" id="lblStudentid">Student ID</label>
       <input type="text" id="studentid" placeholder="Enter student ID">
 
-      <label for="email">Email</label>
+      <label for="email" id="lblEmail">Email</label>
       <input type="email" id="email" placeholder="Enter email">
 
-      <label for="phone">Phone</label>
+      <label for="phone" id="lblPhone">Phone</label>
       <input type="tel" id="phone" placeholder="Enter phone">
     </div>
 
     <!-- Academic Information -->
     <div class="form-section">
-      <h3>Academic Information</h3>
-      <label for="program">Program</label>
+      <h3 id="academicTitle">Academic Information</h3>
+      <label for="program" id="lblProgram">Program</label>
       <select id="program">
         <option value="">Select program</option>
         <option value="CS">Computer Science</option>
@@ -154,7 +155,7 @@
         <option value="ENG">Engineering</option>
       </select>
 
-      <label for="level">Level</label>
+      <label for="level" id="lblLevel">Level</label>
       <select id="level">
         <option value="">Select level</option>
         <option value="Undergraduate">Undergraduate</option>
@@ -164,8 +165,8 @@
 
     <!-- Buttons -->
     <div class="buttons">
-      <button class="register" onclick="registerStudent()">Register</button>
-      <button class="cancel" onclick="cancelForm()">Cancel</button>
+      <button class="register" id="btnRegister" onclick="registerStudent()">Register</button>
+      <button class="cancel" id="btnCancel" onclick="cancelForm()">Cancel</button>
     </div>
   </div>
 
@@ -195,6 +196,28 @@
       document.getElementById('level').value = "";
       alert("❌ Form cleared!");
     }
-  </script>
-</body>
-</html>
+
+    function changeLanguage(lang) {
+      if (lang === 'ar') {
+        document.getElementById("dashboard").textContent = "لوحة التحكم";
+        document.getElementById("students").textContent = "الطلاب";
+        document.getElementById("courses").textContent = "المقررات";
+        document.getElementById("reports").textContent = "التقارير";
+        document.getElementById("settings").textContent = "الإعدادات";
+        document.getElementById("logout").textContent = "تسجيل الخروج";
+
+        document.getElementById("personalTitle").textContent = "المعلومات الشخصية";
+        document.getElementById("lblFullname").textContent = "الاسم الكامل";
+        document.getElementById("lblStudentid").textContent = "الرقم الجامعي";
+        document.getElementById("lblEmail").textContent = "البريد الإلكتروني";
+        document.getElementById("lblPhone").textContent = "الهاتف";
+
+        document.getElementById("academicTitle").textContent = "المعلومات الأكاديمية";
+        document.getElementById("lblProgram").textContent = "البرنامج";
+        document.getElementById("lblLevel").textContent = "المستوى";
+
+        document.getElementById("btnRegister").textContent = "تسجيل";
+        document.getElementById("btnCancel").textContent = "إلغاء";
+      } else {
+        document.getElementById("dashboard").textContent = "Dashboard";
+        document
