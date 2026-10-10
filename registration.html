@@ -95,19 +95,6 @@
     .cancel:hover {
       background-color: #c0392b;
     }
-    @media (max-width: 768px) {
-      body {
-        flex-direction: column;
-      }
-      .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-      }
-      .main {
-        margin-left: 0;
-      }
-    }
   </style>
 </head>
 <body>
@@ -145,3 +132,88 @@
       <label for="program" id="lblProgram">Program</label>
       <select id="program">
         <option value="">Select program</option>
+        <option value="CS">Computer Science</option>
+        <option value="IT">Information Technology</option>
+        <option value="ENG">Engineering</option>
+      </select>
+
+      <label for="level" id="lblLevel">Level</label>
+      <select id="level">
+        <option value="">Select level</option>
+        <option value="Undergraduate">Undergraduate</option>
+        <option value="Postgraduate">Postgraduate</option>
+      </select>
+    </div>
+
+    <div class="buttons">
+      <button class="register" id="btnRegister" onclick="registerStudent()">Register</button>
+      <button class="cancel" id="btnCancel" onclick="cancelForm()">Cancel</button>
+    </div>
+  </div>
+
+  <script>
+    let currentLang = 'en';
+
+    function registerStudent() {
+      const fullname = document.getElementById('fullname').value;
+      const studentid = document.getElementById('studentid').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const program = document.getElementById('program').value;
+      const level = document.getElementById('level').value;
+
+      if (!fullname || !studentid || !email || !phone || !program || !level) {
+        alert(currentLang === 'ar' ? "⚠️ الرجاء ملء جميع الحقول!" : "⚠️ Please fill all fields!");
+        return;
+      }
+
+      if (currentLang === 'ar') {
+        alert(`✅ تم تسجيل الطالب:\nالاسم: ${fullname}\nالرقم: ${studentid}\nالبريد: ${email}\nالهاتف: ${phone}\nالبرنامج: ${program}\nالمستوى: ${level}`);
+      } else {
+        alert(`✅ Student Registered:\nName: ${fullname}\nID: ${studentid}\nEmail: ${email}\nPhone: ${phone}\nProgram: ${program}\nLevel: ${level}`);
+      }
+    }
+
+    function cancelForm() {
+      document.getElementById('fullname').value = "";
+      document.getElementById('studentid').value = "";
+      document.getElementById('email').value = "";
+      document.getElementById('phone').value = "";
+      document.getElementById('program').value = "";
+      document.getElementById('level').value = "";
+      alert(currentLang === 'ar' ? "❌ تم مسح النموذج!" : "❌ Form cleared!");
+    }
+
+    function changeLanguage(lang) {
+      currentLang = lang;
+      if (lang === 'ar') {
+        document.getElementById("dashboard").textContent = "لوحة التحكم";
+        document.getElementById("students").textContent = "الطلاب";
+        document.getElementById("courses").textContent = "المقررات";
+        document.getElementById("reports").textContent = "التقارير";
+        document.getElementById("settings").textContent = "الإعدادات";
+        document.getElementById("logout").textContent = "تسجيل الخروج";
+
+        document.getElementById("personalTitle").textContent = "المعلومات الشخصية";
+        document.getElementById("lblFullname").textContent = "الاسم الكامل";
+        document.getElementById("lblStudentid").textContent = "الرقم الجامعي";
+        document.getElementById("lblEmail").textContent = "البريد الإلكتروني";
+        document.getElementById("lblPhone").textContent = "الهاتف";
+
+        document.getElementById("academicTitle").textContent = "المعلومات الأكاديمية";
+        document.getElementById("lblProgram").textContent = "البرنامج";
+        document.getElementById("lblLevel").textContent = "المستوى";
+
+        document.getElementById("btnRegister").textContent = "تسجيل";
+        document.getElementById("btnCancel").textContent = "إلغاء";
+      } else {
+        document.getElementById("dashboard").textContent = "Dashboard";
+        document.getElementById("students").textContent = "Students";
+        document.getElementById("courses").textContent = "Courses";
+        document.getElementById("reports").textContent = "Reports";
+        document.getElementById("settings").textContent = "Settings";
+        document.getElementById("logout").textContent = "Logout";
+
+        document.getElementById("personalTitle").textContent = "Personal Information";
+        document.getElementById("lblFullname").textContent = "Full Name";
+        document.getElementById("lblStudentid").textContent = "Student ID
